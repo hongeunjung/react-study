@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="virtualDom.js"></script>
+    <title>virtualDom</title>
+    <style>
+      img {
+        width: 100%;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      .color-chip {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        text-align: center;
+      }
+      .color-chip li {
+        width: 250px;
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>컬러색상별 상품보기</h2>
+    <ul class="color-chip">
+      <li>
+        <a href="#" onclick="document.querySelector('#colorSkyBlue').show();">
+          <img
+            src="https://images.samsung.com/sg/smartphones/galaxy-s23-ultra/buy/color_sky_blue_MO.png"
+            alt=""
+          />
+        </a>
+        <p class="color-title">SKY BLUE</p>
+      </li>
+      <li>
+        <a href="#" onclick="document.querySelector('#colorLime').show();">
+          <img
+            src="https://images.samsung.com/sg/smartphones/galaxy-s23-ultra/buy/color_lime_MO.png"
+            alt=""
+        /></a>
+        <p class="color-title">LIME</p>
+      </li>
+      <li>
+        <a href="#" onclick="document.querySelector('#colorRed').show();">
+          <img
+            src="https://images.samsung.com/sg/smartphones/galaxy-s23-ultra/buy/color_red_MO.png"
+            alt=""
+        /></a>
+        <p class="color-title">RED</p>
+      </li>
+    </ul>
+
+    <simple-color id="colorSkyBlue">
+      <slot slot="title">Sky blue Color</slot>
+      <slot slot="inbox">
+        <img
+          src="https://images.samsung.com/sg/smartphones/galaxy-s23-ultra/buy/product_color_sky_blue.png?imwidth=480"
+          alt="Sky blue 상품 이미지"
+        />
+      </slot>
+    </simple-color>
+
+    <simple-color id="colorLime">
+      <slot slot="title">Lime Color</slot>
+      <slot slot="inbox">
+        <img
+          src="https://images.samsung.com/sg/smartphones/galaxy-s23-ultra/buy/product_color_lime.png?imwidth=480"
+          alt="Lime 상품 이미지"
+        />
+      </slot>
+    </simple-color>
+
+    <simple-color id="colorRed">
+      <slot slot="title">Red Color</slot>
+      <slot slot="inbox">
+        <img
+          src="https://images.samsung.com/sg/smartphones/galaxy-s23-ultra/buy/product_color_red.png?imwidth=480"
+          alt="Red 상품 이미지"
+        />
+      </slot>
+    </simple-color>
+  </body>
+</html>
